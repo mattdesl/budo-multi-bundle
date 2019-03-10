@@ -1,10 +1,13 @@
 const budo = require('budo');
 const path = require('path');
 const fs = require('fs');
+const disc = require('disc');
 const serveIndex = require('serve-index');
 const Terser = require('terser');
 const browserify = require('browserify');
 const concat = require('concat-stream');
+const http = require('http');
+const opn = require('opn');
 
 // Options for the build step
 const config = {
@@ -170,6 +173,31 @@ if (config.mode === 'bundle') {
     dir: config.dir,
     middleware
   });
+} else if (config.mode === 'analyse') {
+  // Use disc to analyse the bundle
+  browserify({
+    ...config.browserifyOptions,
+    entries,
+    fullPaths: true
+  }).bundle()
+    .pipe(disc())
+    .pipe(concat(buf => {
+      var server = http.createServer();
+      server.on('request', (req, res) => {
+        if (req.url === '/favicon.ico') {
+          return res.end('missing'); // PRs welcome :)
+        }
+        res.once('finish', () => {
+          setTimeout(() => process.exit(), 500);
+        });
+
+        res.setHeader('content-type', 'text/html');
+        res.end(buf.toString());
+      }).listen(12999, err => {
+        if (err) throw err;
+        opn('http://localhost:12999/');
+      });
+    }));
 } else {
   dev();
 }
