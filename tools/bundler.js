@@ -9,7 +9,7 @@ const concat = require('concat-stream');
 // Options for the build step
 const config = {
   // Whether to compress results with Terser
-  minify: false,
+  minify: true,
   // 'bundle', 'dev' or 'serve'
   mode: process.argv[2],
   // Directory to serve/build into
@@ -135,7 +135,16 @@ function writeFile (file, code, cb) {
 function compressIfNeeded (code) {
   // Only compress in build mode
   if (config.minify) {
-    const result = Terser.minify(code);
+    const result = Terser.minify(code, {
+      compress: {
+        keep_infinity: true,
+        pure_getters: true
+      },
+      warnings: true,
+      mangle: {
+        properties: false
+      }
+    });
     const {
       error,
       warnings = []
