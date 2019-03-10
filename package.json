@@ -1,0 +1,39 @@
+{
+  "name": "budo-multi-bundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "browserify": "^16.2.3",
+    "bubleify": "^1.2.1",
+    "budo": "^11.6.1",
+    "concat-stream": "^2.0.0",
+    "factor-bundle": "^2.5.0",
+    "terser": "^3.16.1"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.0.37",
+    "serve-index": "^1.9.1",
+    "swcify": "^1.0.1"
+  },
+  "scripts": {
+    "start": "node tools/bundler.js dev",
+    "bundle": "node tools/bundler.js bundle",
+    "serve": "node tools/bundler.js serve"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/budo-multi-bundle.git"
+  },
+  "homepage": "https://github.com/mattdesl/budo-multi-bundle",
+  "bugs": {
+    "url": "https://github.com/mattdesl/budo-multi-bundle/issues"
+  }
+}
