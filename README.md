@@ -29,7 +29,7 @@ You can try to solve this by increasing the `config.delay` option in the bundle 
 
 ## Why Not Webpack, Parcel, etc?
 
-Because I would rather have something programmatic, modular, resuable, and specific to my needs rather than just a large config file.
+Because I prefer programmable workflows to configuration files.
 
 ## License
 
