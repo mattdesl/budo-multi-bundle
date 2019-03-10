@@ -9,18 +9,16 @@
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@swc/core": "^1.0.37",
     "browserify": "^16.2.3",
-    "bubleify": "^1.2.1",
     "budo": "^11.6.1",
     "concat-stream": "^2.0.0",
     "factor-bundle": "^2.5.0",
-    "terser": "^3.16.1"
-  },
-  "devDependencies": {
-    "@swc/core": "^1.0.37",
     "serve-index": "^1.9.1",
-    "swcify": "^1.0.1"
+    "swcify": "^1.0.1",
+    "terser": "^3.17.0"
   },
   "scripts": {
     "start": "node tools/bundler.js dev",

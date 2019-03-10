@@ -27,6 +27,19 @@ So there is a chance with this multi-bundle setup that you will hit "stale" bund
 
 You can try to solve this by increasing the `config.delay` option in the bundle script.
 
+## Bringing this Into Your Own Project
+
+If you don't want to clone this repo, you can:
+
+- Add a [.swcrc](./.swcrc) file to your project directory (if you plan to use SWC — however you can just strip that from the build or replace it with your favourite Babel, Buble, etc)
+
+- Copy the [bundler.js](./bundler.js) script and [package.json "script" fields](./package.json) into your project
+
+- Run the following to install dev dependencies:
+  ```sh
+  npm install --save-dev budo factor-bundle serve-index terser browserify concat-stream swcify @swc/core
+  ```
+
 ## Why Not Webpack, Parcel, etc?
 
 Because I prefer programmable workflows to configuration files.

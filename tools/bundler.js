@@ -1,7 +1,6 @@
 const budo = require('budo');
 const path = require('path');
 const fs = require('fs');
-const factorize = require('factor-bundle');
 const serveIndex = require('serve-index');
 const Terser = require('terser');
 const browserify = require('browserify');
