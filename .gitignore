@@ -2,4 +2,6 @@ bower_components
 node_modules
 *.log
 .DS_Store
-bundle.js
+public/common.js
+public/bundle-1.js
+public/bundle-2.js
