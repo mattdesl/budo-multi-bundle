@@ -19,6 +19,8 @@ This project includes three scripts:
 
 All of the meat is in the [./tools/bundler.js](./tools/bundler.js) script.
 
+###### :bulb: This branch uses SWC for ES6-to-ES5 transpiling — see the [`babelify` branch](https://github.com/mattdesl/budo-multi-bundle/tree/babelify) for an alternative approach using Babel.
+
 ## Gotchas
 
 Budo has a special feature that suspends the server's response until browserify has fully completed writing its bundle, but this only works on the `common.js` file.
