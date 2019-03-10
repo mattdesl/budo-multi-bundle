@@ -24,8 +24,7 @@ const config = {
   // Common browserify options across dev + bundle
   browserifyOptions: {
     transform: [
-      // Faster and probably easier than babelify
-      'swcify'
+      'babelify'
     ]
   },
   // Delay in milliseconds between reloads, giving the
